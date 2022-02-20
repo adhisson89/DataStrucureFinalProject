@@ -3,13 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.paa.modelo;
+package CapaNegocio;
 
-/**
- *
- * @author Adhisson
- */
-public class Validadores {
+public class ClsValidadores {
     
     public static boolean validadorCedulaIdentidad(String cedulaIdentidad) {
 

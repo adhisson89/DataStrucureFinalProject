@@ -3,15 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.paa.vista;
+package CapaInterfaz;
 
-import com.paa.modelo.Categoria;
+import CapaNegocio.ClsCategoria;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Adhisson
- */
 public class PnlCategoria extends javax.swing.JPanel {
 
     /**
@@ -92,7 +88,7 @@ public class PnlCategoria extends javax.swing.JPanel {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
         
-        FrmMenuPrincipal.categorias.add(new Categoria(txtNombre.getText(), txaDescripcion.getText()));
+        FrmMenuPrincipal.categorias.add(new ClsCategoria(txtNombre.getText(), txaDescripcion.getText()));
         JOptionPane.showMessageDialog(null, "Se registro la categoria exitosamente.");
         
     }//GEN-LAST:event_btnGuardarActionPerformed

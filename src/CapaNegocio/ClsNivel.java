@@ -1,14 +1,14 @@
-package com.paa.modelo;
+package CapaNegocio;
 
 import java.util.List;
 
-public class Nivel {
+public class ClsNivel {
     private String nombre;
     
     private List<String> requisitosGenerales;
     
 
-    public Nivel(String nombre, List<String> registrosGenerales) {
+    public ClsNivel(String nombre, List<String> registrosGenerales) {
         this.nombre = nombre;
         this.requisitosGenerales = registrosGenerales;
     }

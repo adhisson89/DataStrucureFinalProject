@@ -3,24 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.paa.vista;
+package CapaInterfaz;
 
-import com.paa.modelo.Categoria;
-import com.paa.modelo.Curso;
-import com.paa.modelo.Estudiante;
-
-import com.paa.modelo.Validadores;
+import CapaNegocio.ClsCategoria;
+import CapaNegocio.ClsCurso;
+import CapaNegocio.ClsEstudiante;
+import CapaNegocio.ClsValidadores;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Adhisson
- */
 public class PnlMatriculacionEstudiante extends javax.swing.JPanel {
     DefaultTableModel tabla;
     
-    Estudiante e;
+    ClsEstudiante e;
     /**
      * Creates new form PnlRegistroEstudiante
      */
@@ -174,7 +169,7 @@ public class PnlMatriculacionEstudiante extends javax.swing.JPanel {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         // llamar al metodo buscar estudiante por CI
-        e = Estudiante.buscarEstudiantePorCI(FrmMenuPrincipal.estudiantes,txtCI.getText());
+        e = ClsEstudiante.buscarEstudiantePorCI(FrmMenuPrincipal.estudiantes,txtCI.getText());
         
         // evaluar los dos casos mencionados
         if (e == null){
@@ -188,7 +183,7 @@ public class PnlMatriculacionEstudiante extends javax.swing.JPanel {
 
     private void txtCIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCIKeyReleased
         // TODO add your handling code here:
-        if(Validadores.validadorCedulaIdentidad(txtCI.getText())){
+        if(ClsValidadores.validadorCedulaIdentidad(txtCI.getText())){
             lblErrorCi.setVisible(false);
             btnBuscar.setEnabled(true);
         } else {
@@ -204,9 +199,9 @@ public class PnlMatriculacionEstudiante extends javax.swing.JPanel {
     private void cmbCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCategoriaActionPerformed
         // TODO add your handling code here:
         if (cmbCategoria.getSelectedIndex() != -1) {
-            Categoria categoriaSelecionada = FrmMenuPrincipal.categorias.get(cmbCategoria.getSelectedIndex());
+            ClsCategoria categoriaSelecionada = FrmMenuPrincipal.categorias.get(cmbCategoria.getSelectedIndex());
             tabla.setRowCount(0);// limpiar la tabla
-            for (Curso c : categoriaSelecionada.getCursos()) {
+            for (ClsCurso c : categoriaSelecionada.getCursos()) {
                 tabla.addRow(new Object[]{c.getNombre(), c.getNivel().getNombre(),
                     c.getDescripcion(), c.getDuracion()});
             }
@@ -222,7 +217,7 @@ public class PnlMatriculacionEstudiante extends javax.swing.JPanel {
             int indiceCursoSelecionado = tblDatos.getSelectedRow();
 
             // identificar el curso oara matricular el estudiante
-            Categoria categoriaSelecionada = FrmMenuPrincipal.categorias.get(cmbCategoria.getSelectedIndex());
+            ClsCategoria categoriaSelecionada = FrmMenuPrincipal.categorias.get(cmbCategoria.getSelectedIndex());
             e.agregarCurso(categoriaSelecionada.getCursos().get(indiceCursoSelecionado));
         } catch ( Exception e){
             JOptionPane.showMessageDialog(null, e);

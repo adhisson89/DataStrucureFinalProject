@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.paa.vista;
+package CapaInterfaz;
 
-import com.paa.modelo.Nivel;
+import CapaNegocio.ClsNivel;
 import java.util.ArrayList;
 import javax.swing.JOptionPane; // 270.17
 
-/**
- *
- * @author Marcela
- */
 public class PnlNivel extends javax.swing.JPanel {
 
             
@@ -130,7 +126,7 @@ public class PnlNivel extends javax.swing.JPanel {
         if( chkRazonamiento.isSelected()) requisistos.add("Expresion Oral");
         if( chkUsoDeTI.isSelected()) requisistos.add("Expresion Oral");
         
-        FrmMenuPrincipal.niveles.add(new Nivel(txtNombre.getText(), requisistos));
+        FrmMenuPrincipal.niveles.add(new ClsNivel(txtNombre.getText(), requisistos));
         
         JOptionPane.showMessageDialog(null, "El nivel se registro con exito");
     }//GEN-LAST:event_jButton1ActionPerformed

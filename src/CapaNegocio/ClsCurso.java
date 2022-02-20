@@ -1,14 +1,14 @@
-package com.paa.modelo;
+package CapaNegocio;
 
-public class Curso {
+public class ClsCurso {
     private String nombre;
     private String descripcion;
     private int duracion;
     private String requisitosEspecificos;
     
-    private Nivel nivel; // por la relacion de agregacion
+    private ClsNivel nivel; // por la relacion de agregacion
 
-    public Curso(String nombre, String descripcion, int duracion, String requisitosEspecificos, Nivel nivel) {
+    public ClsCurso(String nombre, String descripcion, int duracion, String requisitosEspecificos, ClsNivel nivel) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.duracion = duracion;
@@ -48,11 +48,11 @@ public class Curso {
         this.requisitosEspecificos = requisitosEspecificos;
     }
 
-    public Nivel getNivel() {
+    public ClsNivel getNivel() {
         return nivel;
     }
 
-    public void setNivel(Nivel nivel) {
+    public void setNivel(ClsNivel nivel) {
         this.nivel = nivel;
     }
     

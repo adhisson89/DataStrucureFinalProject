@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.paa.vista;
+package CapaInterfaz;
 
-import com.paa.modelo.Nivel;
-import com.paa.modelo.Categoria;
-import com.paa.modelo.Curso;
-import com.paa.modelo.Docente;
-import com.paa.modelo.Estudiante;
+import CapaNegocio.ClsNivel;
+import CapaNegocio.ClsCategoria;
+import CapaNegocio.ClsCurso;
+import CapaNegocio.ClsDocente;
+import CapaNegocio.ClsEstudiante;
 import java.awt.BorderLayout;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -29,12 +29,12 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     PnlMatriculacionEstudiante panelMatriculacion;
     PnlReporteEstudiante panelReportes;
     
-    static ArrayList <Nivel> niveles;
-    static ArrayList <Categoria> categorias;
-    static ArrayList <Curso> cursos;
-    static ArrayList <Docente> docentes;
+    static ArrayList <ClsNivel> niveles;
+    static ArrayList <ClsCategoria> categorias;
+    static ArrayList <ClsCurso> cursos;
+    static ArrayList <ClsDocente> docentes;
     //static ArrayList <Estudiante> estudiantes;
-    static Vector <Estudiante> estudiantes;
+    static Vector <ClsEstudiante> estudiantes;
     
     /**
      * Creates new form FrmMenuPrincipal

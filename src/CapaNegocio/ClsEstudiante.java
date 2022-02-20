@@ -1,27 +1,27 @@
-package com.paa.modelo;
+package CapaNegocio;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Estudiante extends Persona {
-    private ArrayList <Curso> cursos;
+public class ClsEstudiante extends ClsPersona {
+    private ArrayList <ClsCurso> cursos;
 
     
-    public Estudiante(String nombre, String apellido, String cedula, String correoElectronico) {
+    public ClsEstudiante(String nombre, String apellido, String cedula, String correoElectronico) {
         super(nombre, apellido, cedula, correoElectronico);
     }
     
-    public void agregarCurso(Curso c){
+    public void agregarCurso(ClsCurso c){
         this.cursos.add(c);
     }
     
-    public static Estudiante buscarEstudiantePorCI(List<Estudiante> lista, String cedulaBuscar) {
+    public static ClsEstudiante buscarEstudiantePorCI(List<ClsEstudiante> lista, String cedulaBuscar) {
         // recorrer la lista y comparar la cédula de cada estudiante en la lista con la clave
         // a la primera ocurrencia se retorna el estudiante
         // null si no encuentra al estudiante en la lista
-        Estudiante estudianteEncontrado = null;
-        for(Estudiante e: lista){
+        ClsEstudiante estudianteEncontrado = null;
+        for(ClsEstudiante e: lista){
             if(e.getCedula().equals(cedulaBuscar)){
                 estudianteEncontrado = e;
                 break; // return estudianteEncontrado
@@ -31,11 +31,11 @@ public class Estudiante extends Persona {
         return estudianteEncontrado;
     }
 
-    public ArrayList<Curso> getCursos() {
+    public ArrayList<ClsCurso> getCursos() {
         return cursos;
     }
 
-    public void setCursos(ArrayList<Curso> cursos) {
+    public void setCursos(ArrayList<ClsCurso> cursos) {
         this.cursos = cursos;
     }
     

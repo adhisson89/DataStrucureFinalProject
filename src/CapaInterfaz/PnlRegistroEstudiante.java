@@ -3,28 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.paa.vista;
+package CapaInterfaz;
 
-import com.paa.modelo.Docente;
-import com.paa.modelo.Validadores;
+import CapaNegocio.ClsEstudiante;
+import CapaNegocio.ClsValidadores;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Adhisson
- */
-public class PnlRegistroDocente extends javax.swing.JPanel {
+public class PnlRegistroEstudiante extends javax.swing.JPanel {
+    
     
     /**
      * Creates new form PnlRegistroEstudiante
      */
-    public PnlRegistroDocente() {
+    
+    public PnlRegistroEstudiante() {
         initComponents();
         lblErrorCi.setVisible(false);
         lblErrorCorreo.setVisible(false);
-        lblErrorNombre.setVisible(false);
-        lblErrorCelular.setVisible(false);
-        
+        lblErrorNombre.setVisible(false);   
     }
 
     /**
@@ -48,12 +44,6 @@ public class PnlRegistroDocente extends javax.swing.JPanel {
         lblErrorCi = new javax.swing.JLabel();
         lblErrorNombre = new javax.swing.JLabel();
         lblErrorCorreo = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtCelular = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txaPresentacion = new javax.swing.JTextArea();
-        lblErrorCelular = new javax.swing.JLabel();
 
         jLabel1.setText("CI:");
 
@@ -97,58 +87,33 @@ public class PnlRegistroDocente extends javax.swing.JPanel {
         lblErrorCorreo.setForeground(java.awt.Color.red);
         lblErrorCorreo.setText("Ingrese un correo válido");
 
-        jLabel5.setText("Celular:");
-
-        jLabel6.setText("Presentación:");
-
-        txtCelular.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtCelularKeyReleased(evt);
-            }
-        });
-
-        txaPresentacion.setColumns(20);
-        txaPresentacion.setRows(5);
-        jScrollPane1.setViewportView(txaPresentacion);
-
-        lblErrorCelular.setForeground(java.awt.Color.red);
-        lblErrorCelular.setText("Ingrese un celular válido");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(btnGuardar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(btnGuardar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
                         .addGap(81, 81, 81)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblErrorCelular)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblErrorCorreo)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblErrorCorreo)
                                 .addComponent(txtCI)
                                 .addComponent(txtNombre)
                                 .addComponent(txtApellido)
-                                .addComponent(txtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                                .addComponent(lblErrorNombre)
-                                .addComponent(lblErrorCi)
-                                .addComponent(txtCelular))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61))))
+                                .addComponent(txtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+                            .addComponent(lblErrorNombre)
+                            .addComponent(lblErrorCi))))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,37 +140,30 @@ public class PnlRegistroDocente extends javax.swing.JPanel {
                     .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblErrorCorreo)
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblErrorCelular)
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addGap(19, 19, 19)
                 .addComponent(btnGuardar)
-                .addGap(43, 43, 43))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        String ci = txtCI.getText();
-        String nombre = txtNombre.getText();
-        String apellido = txtApellido.getText();
-        String correo = txtCorreo.getText();
-        String celular = txtCelular.getText();
-        String presentacion = txaPresentacion.getText();
-        FrmMenuPrincipal.docentes.add(new Docente(presentacion, celular, nombre, apellido, ci, correo));
-        JOptionPane.showMessageDialog(null, "El docente se registro con exito");
+        try {
+            String ci = txtCI.getText();
+            String nombre = txtNombre.getText();
+            String apellido = txtApellido.getText();
+            String correo = txtCorreo.getText();
+            FrmMenuPrincipal.estudiantes.add(new ClsEstudiante(nombre, apellido, ci, correo));
+            JOptionPane.showMessageDialog(null, "El estudiante se registro con exito");
+
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Se presento un error de tipo" + e);
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void txtCIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCIKeyReleased
         // TODO add your handling code here:
-         if(Validadores.validadorCedulaIdentidad(txtCI.getText())){
+        if(ClsValidadores.validadorCedulaIdentidad(txtCI.getText())){
             lblErrorCi.setVisible(false);
             btnGuardar.setEnabled(true);
         } else {
@@ -216,7 +174,7 @@ public class PnlRegistroDocente extends javax.swing.JPanel {
 
     private void txtNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyReleased
         // TODO add your handling code here:
-        if (Validadores.validadorNombre(txtNombre.getText())) {
+        if(ClsValidadores.validadorNombre(txtNombre.getText())){
             lblErrorNombre.setVisible(false);
             btnGuardar.setEnabled(true);
         } else {
@@ -227,7 +185,7 @@ public class PnlRegistroDocente extends javax.swing.JPanel {
 
     private void txtCorreoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoKeyReleased
         // TODO add your handling code here:
-        if(Validadores.validadorCorreoElectronico(txtCorreo.getText())){
+        if(ClsValidadores.validadorCorreoElectronico(txtCorreo.getText())){
             lblErrorCorreo.setVisible(false);
             btnGuardar.setEnabled(true);
         } else {
@@ -235,36 +193,20 @@ public class PnlRegistroDocente extends javax.swing.JPanel {
             btnGuardar.setEnabled(false);
         }
     }//GEN-LAST:event_txtCorreoKeyReleased
-
-    private void txtCelularKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelularKeyReleased
-        // TODO add your handling code here:
-        if(Validadores.validadorCelular(txtCelular.getText())){
-            lblErrorCelular.setVisible(false);
-            btnGuardar.setEnabled(true);
-        } else {
-            lblErrorCelular.setVisible(true);
-            btnGuardar.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtCelularKeyReleased
-
-
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblErrorCelular;
     private javax.swing.JLabel lblErrorCi;
     private javax.swing.JLabel lblErrorCorreo;
     private javax.swing.JLabel lblErrorNombre;
-    private javax.swing.JTextArea txaPresentacion;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtCI;
-    private javax.swing.JTextField txtCelular;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables

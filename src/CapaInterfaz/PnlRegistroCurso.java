@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.paa.vista;
+package CapaInterfaz;
 
-import com.paa.modelo.Categoria;
-import com.paa.modelo.Curso;
-import com.paa.modelo.Docente;
-import com.paa.modelo.Nivel;
-import com.paa.modelo.Validadores;
+import CapaNegocio.ClsCategoria;
+import CapaNegocio.ClsCurso;
+import CapaNegocio.ClsDocente;
+import CapaNegocio.ClsNivel;
+import CapaNegocio.ClsValidadores;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Adhisson
- */
+
 public class PnlRegistroCurso extends javax.swing.JPanel {
        
     
@@ -192,13 +189,13 @@ public class PnlRegistroCurso extends javax.swing.JPanel {
         int duracion = Integer.parseInt(txtDuracion.getText());
         String  descripcion = txaDescripcionCurso.getText();
         
-        Nivel nivelSelecionado = FrmMenuPrincipal.niveles.get(cmbNivel.getSelectedIndex());
-        Categoria categoriaSeleccionada = FrmMenuPrincipal.categorias.get(cmbCategoria.getSelectedIndex());
+        ClsNivel nivelSelecionado = FrmMenuPrincipal.niveles.get(cmbNivel.getSelectedIndex());
+        ClsCategoria categoriaSeleccionada = FrmMenuPrincipal.categorias.get(cmbCategoria.getSelectedIndex());
         String requisitosEspecificos = txaRequisistosEspecificos.getText();
         // relacion de asociación
-        categoriaSeleccionada.agregarCurso(new Curso(nombreCurso, descripcion, duracion, requisitosEspecificos, nivelSelecionado));
+        categoriaSeleccionada.agregarCurso(new ClsCurso(nombreCurso, descripcion, duracion, requisitosEspecificos, nivelSelecionado));
         
-        Docente docenteSeleccionado = FrmMenuPrincipal.docentes.get(cmbDocentes.getSelectedIndex());
+        ClsDocente docenteSeleccionado = FrmMenuPrincipal.docentes.get(cmbDocentes.getSelectedIndex());
         int indiceUltimoElemento = categoriaSeleccionada.getCursos().size() - 1;
         docenteSeleccionado.agregarCurso(categoriaSeleccionada.getCursos().get(indiceUltimoElemento));
         
@@ -215,7 +212,7 @@ public class PnlRegistroCurso extends javax.swing.JPanel {
 
     private void txtDuracionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDuracionKeyReleased
         // TODO add your handling code here:
-        if(Validadores.validadorDigitos(txtDuracion.getText())){
+        if(ClsValidadores.validadorDigitos(txtDuracion.getText())){
             lblErrorDuracion.setVisible(false);
             btnGuardar.setEnabled(true);
         } else {
@@ -238,7 +235,7 @@ public class PnlRegistroCurso extends javax.swing.JPanel {
     
     public void mostrarNiveles(){
         cmbNivel.removeAllItems();
-        for(Nivel n: FrmMenuPrincipal.niveles){
+        for(ClsNivel n: FrmMenuPrincipal.niveles){
             cmbNivel.addItem(n.getNombre());
         }
     }
@@ -246,7 +243,7 @@ public class PnlRegistroCurso extends javax.swing.JPanel {
     public void mostrarDocentes(){
         cmbNivel.removeAllItems();
         // se presentara el nombre y apellido del docente
-        for(Docente d: FrmMenuPrincipal.docentes){
+        for(ClsDocente d: FrmMenuPrincipal.docentes){
             cmbNivel.addItem(d.getNombre() +" "+ d.getApellido());
         }
     }

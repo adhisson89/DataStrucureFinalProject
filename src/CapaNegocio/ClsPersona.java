@@ -1,22 +1,22 @@
-package com.paa.modelo;
+package CapaNegocio;
 
 import java.util.ArrayList;
 
 
-public abstract class Persona {
+public abstract class ClsPersona {
     protected String nombre;
     protected String apellido;
     protected String cedula;
     protected String correoElectronico;
 
-    public Persona(String nombre, String apellido, String cedula, String correoElectronico) {
+    public ClsPersona(String nombre, String apellido, String cedula, String correoElectronico) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.correoElectronico = correoElectronico;
     }
     
-    public Persona(){}
+    public ClsPersona(){}
     
     public String getNombre() {
         return nombre;
@@ -50,9 +50,9 @@ public abstract class Persona {
         this.correoElectronico = correoElectronico;
     }
     
-    public static Persona buscarPersonaPorCI(ArrayList<Persona> lista, String cedulaBuscar){
-        Persona personaEncontrada = null;
-        for(Persona p: lista){
+    public static ClsPersona buscarPersonaPorCI(ArrayList<ClsPersona> lista, String cedulaBuscar){
+        ClsPersona personaEncontrada = null;
+        for(ClsPersona p: lista){
             if(p.getCedula().equals(cedulaBuscar)){
                 personaEncontrada = p;
                 break;

@@ -41,7 +41,7 @@
                               <Component id="txtCI" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtApellido" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtCorreo" alignment="0" pref="124" max="32767" attributes="0"/>
+                              <Component id="txtCorreo" alignment="0" max="32767" attributes="0"/>
                               <Component id="lblErrorNombre" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lblErrorCi" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="txtCelular" alignment="0" max="32767" attributes="0"/>

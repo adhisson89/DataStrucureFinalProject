@@ -3,17 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.paa.vista;
+package CapaInterfaz;
 
 
-import com.paa.modelo.Estudiante;
+import CapaNegocio.ClsEstudiante;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Adhisson
- */
 public class PnlReporteEstudiante extends javax.swing.JPanel {
     DefaultTableModel tabla;
     
@@ -39,7 +35,7 @@ public class PnlReporteEstudiante extends javax.swing.JPanel {
         // limpiar la tabla
         try {
             tabla.setRowCount(0);
-            for (Estudiante e : FrmMenuPrincipal.estudiantes) {
+            for (ClsEstudiante e : FrmMenuPrincipal.estudiantes) {
                 tabla.addRow(new Object[]{e.getNombre(), e.getApellido(), e.getCursos().size()});
             }
         }catch (Exception e){
