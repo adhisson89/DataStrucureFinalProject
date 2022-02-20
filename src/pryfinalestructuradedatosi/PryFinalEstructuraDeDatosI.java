@@ -7,7 +7,8 @@ package pryfinalestructuradedatosi;
 
 /**
  *
- * @author Adhisson Cedeño adhisson.cedeno@epn.edu.ec
+ * @author Adhisson Cedeño 
+ * adhisson.cedeno@epn.edu.ec
  */
 public class PryFinalEstructuraDeDatosI {
 
