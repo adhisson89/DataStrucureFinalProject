@@ -115,19 +115,14 @@ public class PnlAdministrador extends javax.swing.JPanel {
         pnlNivel.setVisible(true);
         pnlNivel.setSize(850, 529);
         pnlNivel.setLocation(0, 0);
-        this.add(pnlNivel);
-        this.revalidate();
-        this.repaint();
+        add(pnlNivel);
+        revalidate();
+        repaint();
     }//GEN-LAST:event_btnNivelActionPerformed
     
     public void limpiarV2(){
         pnlNivel.setVisible(false);
         pContenedor.setVisible(true);
-        pContenedor.setSize(850, 529);
-        pContenedor.setLocation(0, 0);
-        add(pContenedor);
-        revalidate();
-        repaint();
     }
     
 

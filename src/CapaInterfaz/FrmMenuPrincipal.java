@@ -5,8 +5,8 @@
  */
 package CapaInterfaz;
 
-import CapaInterfaz.panelesPrincipales.PnlPrincipal;
-import CapaInterfaz.panelesPrincipales.PnlAdministrador;
+
+import CapaInterfaz.panelesPrincipales.*;
 import CapaNegocio.ClsNivel;
 import CapaNegocio.ClsCategoria;
 import CapaNegocio.ClsCurso;
@@ -27,8 +27,9 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     PnlReporteEstudiante panelReportes;*/
     
     //Paneles Nuevos
-    PnlPrincipal panelPrincipal;
     PnlAdministrador panelAdministrador;
+    PnlDocente panelDocente;
+    PnlEstudiante panelEstudiante;
     
     
     public static ArrayList <ClsNivel> niveles;
@@ -54,10 +55,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         docentes = new ArrayList<>();
         estudiantes = new Vector<>();
         
-        pContenedor.setVisible(false);
         
-        panelPrincipal = new PnlPrincipal();
         panelAdministrador = new PnlAdministrador();
+        panelDocente = new PnlDocente();
+        panelEstudiante = new PnlEstudiante();
  
     }
 
@@ -71,9 +72,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        pContenedor = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mnVentanaPrincipal = new javax.swing.JMenu();
+        mnAdministrador = new javax.swing.JMenu();
+        mnDocente = new javax.swing.JMenu();
+        mnEstudiante = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
 
         jPanel2.setForeground(new java.awt.Color(0, 0, 250));
@@ -93,27 +95,29 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         setTitle("Aprende Ahora");
         setResizable(false);
 
-        pContenedor.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        pContenedor.setEnabled(false);
-
-        javax.swing.GroupLayout pContenedorLayout = new javax.swing.GroupLayout(pContenedor);
-        pContenedor.setLayout(pContenedorLayout);
-        pContenedorLayout.setHorizontalGroup(
-            pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 846, Short.MAX_VALUE)
-        );
-        pContenedorLayout.setVerticalGroup(
-            pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 525, Short.MAX_VALUE)
-        );
-
-        mnVentanaPrincipal.setText("Ventana Principal");
-        mnVentanaPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+        mnAdministrador.setText("Administrador");
+        mnAdministrador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                mnVentanaPrincipalMousePressed(evt);
+                mnAdministradorMousePressed(evt);
             }
         });
-        jMenuBar1.add(mnVentanaPrincipal);
+        jMenuBar1.add(mnAdministrador);
+
+        mnDocente.setText("Docente");
+        mnDocente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mnDocenteMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(mnDocente);
+
+        mnEstudiante.setText("Estudiante");
+        mnEstudiante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mnEstudianteMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(mnEstudiante);
 
         jMenu1.setText("Acerca De");
         jMenuBar1.add(jMenu1);
@@ -124,33 +128,51 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 850, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 529, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mnVentanaPrincipalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnVentanaPrincipalMousePressed
-        // TODO add your handling code here:
+    private void mnAdministradorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnAdministradorMousePressed
         limpiarFrame();
-        panelPrincipal.setVisible(true);
-        panelPrincipal.setSize(850, 530);
-        panelPrincipal.setLocation(0,0);
-        add(panelPrincipal);
+        panelAdministrador.setVisible(true);
+        panelAdministrador.setSize(850, 530);
+        panelAdministrador.setLocation(0,0);
+        add(panelAdministrador);
         revalidate();
         repaint();
-    }//GEN-LAST:event_mnVentanaPrincipalMousePressed
+    }//GEN-LAST:event_mnAdministradorMousePressed
+
+    private void mnDocenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnDocenteMouseClicked
+        limpiarFrame();
+        panelDocente.setVisible(true);
+        panelDocente.setSize(850, 530);
+        panelDocente.setLocation(0,0);
+        add(panelDocente);
+        revalidate();
+        repaint();
+    }//GEN-LAST:event_mnDocenteMouseClicked
+
+    private void mnEstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnEstudianteMouseClicked
+        limpiarFrame();
+        panelEstudiante.setVisible(true);
+        panelEstudiante.setSize(850, 530);
+        panelEstudiante.setLocation(0,0);
+        add(panelEstudiante);
+        revalidate();
+        repaint();
+    }//GEN-LAST:event_mnEstudianteMouseClicked
      
     private void limpiarFrame(){
-        
-        panelPrincipal.limpiar();
-        panelPrincipal.activar();
+        panelEstudiante.setVisible(false);
+        panelDocente.setVisible(false);
+        panelAdministrador.setVisible(false);
         panelAdministrador.limpiarV2();
-       
     }
     
     /**
@@ -192,7 +214,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JMenu mnVentanaPrincipal;
-    private javax.swing.JPanel pContenedor;
+    private javax.swing.JMenu mnAdministrador;
+    private javax.swing.JMenu mnDocente;
+    private javax.swing.JMenu mnEstudiante;
     // End of variables declaration//GEN-END:variables
 }
