@@ -19,8 +19,7 @@ public class PnlNivel extends javax.swing.JPanel {
      * Creates new form PnlNivel
      */
     public PnlNivel() {
-        initComponents();
-        
+        initComponents();  
     }
 
     /**

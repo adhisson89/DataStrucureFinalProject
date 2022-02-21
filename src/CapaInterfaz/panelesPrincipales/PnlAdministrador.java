@@ -5,7 +5,8 @@
  */
 package CapaInterfaz.panelesPrincipales;
 
-import CapaInterfaz.panelesSecundarios.PnlNivel;
+import CapaInterfaz.panelesSecundarios.*;
+
 
 /**
  *
@@ -14,11 +15,14 @@ import CapaInterfaz.panelesSecundarios.PnlNivel;
 public class PnlAdministrador extends javax.swing.JPanel {
     
     PnlNivel pnlNivel;
+    PnlRegistroCurso pnlCurso;
+    PnlCategoria pnlCategoria;
 
     public PnlAdministrador() {
         initComponents();
         pnlNivel = new PnlNivel();
-        
+        pnlCurso = new PnlRegistroCurso();
+        pnlCategoria = new PnlCategoria();
     }
 
     /**
@@ -47,9 +51,19 @@ public class PnlAdministrador extends javax.swing.JPanel {
 
         btnCurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 2.png"))); // NOI18N
         btnCurso.setText("Agregar Curso");
+        btnCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCursoActionPerformed(evt);
+            }
+        });
 
         btnCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 23.png"))); // NOI18N
         btnCategoria.setText("Agregar Categoría");
+        btnCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategoriaActionPerformed(evt);
+            }
+        });
 
         btnDocente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 9.png"))); // NOI18N
         btnDocente.setText("Modificar Docente");
@@ -119,9 +133,31 @@ public class PnlAdministrador extends javax.swing.JPanel {
         revalidate();
         repaint();
     }//GEN-LAST:event_btnNivelActionPerformed
+
+    private void btnCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCursoActionPerformed
+        pContenedor.setVisible(false);
+        pnlCurso.setVisible(true);
+        pnlCurso.setSize(850, 529);
+        pnlCurso.setLocation(0, 0);
+        add(pnlCurso);
+        revalidate();
+        repaint();
+    }//GEN-LAST:event_btnCursoActionPerformed
+
+    private void btnCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriaActionPerformed
+        pContenedor.setVisible(false);
+        pnlCategoria.setVisible(true);
+        pnlCategoria.setSize(850, 529);
+        pnlCategoria.setLocation(0, 0);
+        add(pnlCategoria);
+        revalidate();
+        repaint();
+    }//GEN-LAST:event_btnCategoriaActionPerformed
     
-    public void limpiarV2(){
+    public void limpiar(){
         pnlNivel.setVisible(false);
+        pnlCurso.setVisible(false);
+        pnlCategoria.setVisible(false);
         pContenedor.setVisible(true);
     }
     
