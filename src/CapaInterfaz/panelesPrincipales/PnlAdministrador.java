@@ -5,17 +5,20 @@
  */
 package CapaInterfaz.panelesPrincipales;
 
+import CapaInterfaz.panelesSecundarios.PnlNivel;
+
 /**
  *
  * @author Adhisson Cedeño adhisson.cedeno@epn.edu.ec
  */
 public class PnlAdministrador extends javax.swing.JPanel {
+    
+    PnlNivel pnlNivel;
 
-    /**
-     * Creates new form PnlAdministrador
-     */
     public PnlAdministrador() {
         initComponents();
+        pnlNivel = new PnlNivel();
+        
     }
 
     /**
@@ -27,7 +30,7 @@ public class PnlAdministrador extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        pContenedor = new javax.swing.JPanel();
         btnNivel = new javax.swing.JButton();
         btnCurso = new javax.swing.JButton();
         btnCategoria = new javax.swing.JButton();
@@ -36,6 +39,11 @@ public class PnlAdministrador extends javax.swing.JPanel {
 
         btnNivel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 22.png"))); // NOI18N
         btnNivel.setText("Agregar Nivel");
+        btnNivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNivelActionPerformed(evt);
+            }
+        });
 
         btnCurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 2.png"))); // NOI18N
         btnCurso.setText("Agregar Curso");
@@ -49,37 +57,37 @@ public class PnlAdministrador extends javax.swing.JPanel {
         btnEstudiante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 6.png"))); // NOI18N
         btnEstudiante.setText("Modificar Estudiante");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pContenedorLayout = new javax.swing.GroupLayout(pContenedor);
+        pContenedor.setLayout(pContenedorLayout);
+        pContenedorLayout.setHorizontalGroup(
+            pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pContenedorLayout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCurso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDocente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(99, 99, 99))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(pContenedorLayout.createSequentialGroup()
                 .addGap(304, 304, 304)
                 .addComponent(btnEstudiante)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCategoria, btnCurso, btnDocente, btnEstudiante, btnNivel});
+        pContenedorLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCategoria, btnCurso, btnDocente, btnEstudiante, btnNivel});
 
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pContenedorLayout.setVerticalGroup(
+            pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pContenedorLayout.createSequentialGroup()
                 .addGap(75, 75, 75)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCurso))
                 .addGap(66, 66, 66)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDocente)
                     .addComponent(btnCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
@@ -87,20 +95,41 @@ public class PnlAdministrador extends javax.swing.JPanel {
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCategoria, btnCurso, btnDocente, btnEstudiante, btnNivel});
+        pContenedorLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCategoria, btnCurso, btnDocente, btnEstudiante, btnNivel});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pContenedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNivelActionPerformed
+        // TODO add your handling code here:
+        pContenedor.setVisible(false);
+        pnlNivel.setVisible(true);
+        pnlNivel.setSize(850, 529);
+        pnlNivel.setLocation(0, 0);
+        this.add(pnlNivel);
+        this.revalidate();
+        this.repaint();
+    }//GEN-LAST:event_btnNivelActionPerformed
+    
+    public void limpiarV2(){
+        pnlNivel.setVisible(false);
+        pContenedor.setVisible(true);
+        pContenedor.setSize(850, 529);
+        pContenedor.setLocation(0, 0);
+        add(pContenedor);
+        revalidate();
+        repaint();
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCategoria;
@@ -108,6 +137,6 @@ public class PnlAdministrador extends javax.swing.JPanel {
     private javax.swing.JButton btnDocente;
     private javax.swing.JButton btnEstudiante;
     private javax.swing.JButton btnNivel;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel pContenedor;
     // End of variables declaration//GEN-END:variables
 }

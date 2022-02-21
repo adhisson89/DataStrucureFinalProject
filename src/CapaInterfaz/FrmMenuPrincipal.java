@@ -5,38 +5,38 @@
  */
 package CapaInterfaz;
 
+import CapaInterfaz.panelesPrincipales.PnlPrincipal;
 import CapaInterfaz.panelesPrincipales.PnlAdministrador;
 import CapaNegocio.ClsNivel;
 import CapaNegocio.ClsCategoria;
 import CapaNegocio.ClsCurso;
 import CapaNegocio.ClsDocente;
 import CapaNegocio.ClsEstudiante;
-import java.awt.BorderLayout;
-import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Vector;
 
 
 public class FrmMenuPrincipal extends javax.swing.JFrame {
 
-    PnlNivel panelNivel;
+    /*PnlNivel panelNivel;
     PnlCategoria panelCategoria;
     PnlRegistroCurso panelRegistroCurso;
     PnlRegistroDocente registroDocente;
     PnlRegistroEstudiante panelRegistroEstudiante;
     PnlMatriculacionEstudiante panelMatriculacion;
-    PnlReporteEstudiante panelReportes;
+    PnlReporteEstudiante panelReportes;*/
     
     //Paneles Nuevos
     PnlPrincipal panelPrincipal;
+    PnlAdministrador panelAdministrador;
     
     
-    static ArrayList <ClsNivel> niveles;
-    static ArrayList <ClsCategoria> categorias;
-    static ArrayList <ClsCurso> cursos;
-    static ArrayList <ClsDocente> docentes;
+    public static ArrayList <ClsNivel> niveles;
+    public static ArrayList <ClsCategoria> categorias;
+    public static ArrayList <ClsCurso> cursos;
+    public static ArrayList <ClsDocente> docentes;
     //static ArrayList <Estudiante> estudiantes;
-    static Vector <ClsEstudiante> estudiantes;
+    public static Vector <ClsEstudiante> estudiantes;
     
     /**
      * Creates new form FrmMenuPrincipal
@@ -48,32 +48,17 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         revalidate();
         repaint();
         
-        panelNivel = new PnlNivel();
         niveles = new ArrayList<>();
-        
-        panelCategoria = new PnlCategoria();
         categorias = new ArrayList<>();
-        
-        panelRegistroCurso = new PnlRegistroCurso();
         cursos = new ArrayList<>();
-        
-        registroDocente = new PnlRegistroDocente();
         docentes = new ArrayList<>();
-        
-        panelRegistroEstudiante = new PnlRegistroEstudiante();
-        //estudiantes = new ArrayList<>();
         estudiantes = new Vector<>();
-        
-        panelMatriculacion = new PnlMatriculacionEstudiante();
-        panelReportes = new PnlReporteEstudiante();
         
         pContenedor.setVisible(false);
         
-        
         panelPrincipal = new PnlPrincipal();
-        
-                
-        
+        panelAdministrador = new PnlAdministrador();
+ 
     }
 
     /**
@@ -164,16 +149,9 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private void limpiarFrame(){
         
         panelPrincipal.limpiar();
-   
-        panelNivel.setVisible(false);
-        panelCategoria.setVisible(false);
-        panelRegistroCurso.setVisible(false);
-        registroDocente.setVisible(false);
-        panelRegistroEstudiante.setVisible(false);
-        panelMatriculacion.setVisible(false);
-        panelReportes.setVisible(false);
-        //Paneles Nuevos
-        panelPrincipal.setVisible(false);
+        panelPrincipal.activar();
+        panelAdministrador.limpiarV2();
+        
         
     }
     

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CapaInterfaz;
+package CapaInterfaz.panelesPrincipales;
 
 import CapaInterfaz.FrmMenuPrincipal;
 import CapaInterfaz.panelesPrincipales.*;
@@ -140,6 +140,10 @@ public class PnlPrincipal extends javax.swing.JPanel {
         pnlAdmin.setVisible(false);
         pnlDocente.setVisible(false);
         pnlEstudiante.setVisible(false);
+        pContenedor.setVisible(true);
+    }
+    
+    public void activar(){
         pContenedor.setVisible(true);
     }
     

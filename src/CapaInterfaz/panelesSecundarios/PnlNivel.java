@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CapaInterfaz;
+package CapaInterfaz.panelesSecundarios;
 
+import CapaInterfaz.FrmMenuPrincipal;
 import CapaNegocio.ClsNivel;
 import java.util.ArrayList;
 import javax.swing.JOptionPane; // 270.17
@@ -129,6 +130,8 @@ public class PnlNivel extends javax.swing.JPanel {
         FrmMenuPrincipal.niveles.add(new ClsNivel(txtNombre.getText(), requisistos));
         
         JOptionPane.showMessageDialog(null, "El nivel se registro con exito");
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

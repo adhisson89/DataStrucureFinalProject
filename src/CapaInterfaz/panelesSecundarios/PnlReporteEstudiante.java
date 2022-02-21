@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CapaInterfaz;
+package CapaInterfaz.panelesSecundarios;
 
 
+import CapaInterfaz.FrmMenuPrincipal;
 import CapaNegocio.ClsEstudiante;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
