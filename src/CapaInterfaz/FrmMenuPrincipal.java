@@ -174,6 +174,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         panelAdministrador.setVisible(false);
         panelAdministrador.limpiar();
         panelEstudiante.limpiar();
+
     }
     
     /**
