@@ -143,7 +143,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         add(panelPrincipal);
         revalidate();
         repaint();
-        
     }//GEN-LAST:event_mnVentanaPrincipalMousePressed
      
     private void limpiarFrame(){
@@ -151,8 +150,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         panelPrincipal.limpiar();
         panelPrincipal.activar();
         panelAdministrador.limpiarV2();
-        
-        
+       
     }
     
     /**
