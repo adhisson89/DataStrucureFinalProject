@@ -44,6 +44,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setExtendedState(MAXIMIZED_BOTH);
+        revalidate();
+        repaint();
         
         panelNivel = new PnlNivel();
         niveles = new ArrayList<>();
@@ -112,11 +114,11 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         pContenedor.setLayout(pContenedorLayout);
         pContenedorLayout.setHorizontalGroup(
             pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 613, Short.MAX_VALUE)
+            .addGap(0, 750, Short.MAX_VALUE)
         );
         pContenedorLayout.setVerticalGroup(
             pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 317, Short.MAX_VALUE)
+            .addGap(0, 403, Short.MAX_VALUE)
         );
 
         mnAdministracion.setText("Administración");
@@ -305,6 +307,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnReportesMousePressed
      
     private void limpiarFrame(){
+   
         panelNivel.setVisible(false);
         panelCategoria.setVisible(false);
         panelRegistroCurso.setVisible(false);
