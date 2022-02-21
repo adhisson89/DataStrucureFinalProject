@@ -120,7 +120,7 @@ public class PnlAdministrador extends javax.swing.JPanel {
         repaint();
     }//GEN-LAST:event_btnNivelActionPerformed
     
-    public void limpiarV2(){
+    public void limpiar(){
         pnlNivel.setVisible(false);
         pContenedor.setVisible(true);
     }
