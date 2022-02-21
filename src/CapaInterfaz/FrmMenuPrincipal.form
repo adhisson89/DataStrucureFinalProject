@@ -24,69 +24,18 @@
     </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="mnAdministracion">
+        <Menu class="javax.swing.JMenu" name="mnVentanaPrincipal">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Administraci&#xf3;n"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mnCategoria">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Categor&#xed;a"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnCategoriaActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mnCurso">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Curso"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnCursoActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mnDocente">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Docente"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnDocenteActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mnEstudiante">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Estudiante"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnEstudianteActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mnNivel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Nivel"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnNivelActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="mnMatriculacion">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Matriculaci&#xf3;n"/>
+            <Property name="text" type="java.lang.String" value="Ventana Principal"/>
           </Properties>
           <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnMatriculacionMousePressed"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnMatriculacionActionPerformed"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnVentanaPrincipalMousePressed"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="mnReportes">
+        <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Reportes"/>
+            <Property name="text" type="java.lang.String" value="Acerca De"/>
           </Properties>
-          <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnReportesMousePressed"/>
-          </Events>
         </Menu>
       </SubComponents>
     </Menu>

@@ -5,6 +5,8 @@
  */
 package CapaInterfaz;
 
+import CapaInterfaz.panelesPrincipales.PnlAdministrador;
+import CapaInterfaz.panelesPrincipales.PnlPrincipal;
 import CapaNegocio.ClsNivel;
 import CapaNegocio.ClsCategoria;
 import CapaNegocio.ClsCurso;
@@ -15,10 +17,7 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Vector;
 
-/**
- *
- * @author Marcela
- */
+
 public class FrmMenuPrincipal extends javax.swing.JFrame {
 
     PnlNivel panelNivel;
@@ -28,6 +27,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     PnlRegistroEstudiante panelRegistroEstudiante;
     PnlMatriculacionEstudiante panelMatriculacion;
     PnlReporteEstudiante panelReportes;
+    
+    //Paneles Nuevos
+    PnlPrincipal panelPrincipal;
+    PnlAdministrador panelAdministrador;
     
     static ArrayList <ClsNivel> niveles;
     static ArrayList <ClsCategoria> categorias;
@@ -68,6 +71,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         
         pContenedor.setVisible(false);
         
+        
+        panelPrincipal = new PnlPrincipal();
+                
+        
     }
 
     /**
@@ -82,14 +89,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         pContenedor = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mnAdministracion = new javax.swing.JMenu();
-        mnCategoria = new javax.swing.JMenuItem();
-        mnCurso = new javax.swing.JMenuItem();
-        mnDocente = new javax.swing.JMenuItem();
-        mnEstudiante = new javax.swing.JMenuItem();
-        mnNivel = new javax.swing.JMenuItem();
-        mnMatriculacion = new javax.swing.JMenu();
-        mnReportes = new javax.swing.JMenu();
+        mnVentanaPrincipal = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
 
         jPanel2.setForeground(new java.awt.Color(0, 0, 250));
 
@@ -121,70 +122,16 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             .addGap(0, 403, Short.MAX_VALUE)
         );
 
-        mnAdministracion.setText("Administración");
-
-        mnCategoria.setText("Categoría");
-        mnCategoria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnCategoriaActionPerformed(evt);
-            }
-        });
-        mnAdministracion.add(mnCategoria);
-
-        mnCurso.setText("Curso");
-        mnCurso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnCursoActionPerformed(evt);
-            }
-        });
-        mnAdministracion.add(mnCurso);
-
-        mnDocente.setText("Docente");
-        mnDocente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnDocenteActionPerformed(evt);
-            }
-        });
-        mnAdministracion.add(mnDocente);
-
-        mnEstudiante.setText("Estudiante");
-        mnEstudiante.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnEstudianteActionPerformed(evt);
-            }
-        });
-        mnAdministracion.add(mnEstudiante);
-
-        mnNivel.setText("Nivel");
-        mnNivel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnNivelActionPerformed(evt);
-            }
-        });
-        mnAdministracion.add(mnNivel);
-
-        jMenuBar1.add(mnAdministracion);
-
-        mnMatriculacion.setText("Matriculación");
-        mnMatriculacion.addMouseListener(new java.awt.event.MouseAdapter() {
+        mnVentanaPrincipal.setText("Ventana Principal");
+        mnVentanaPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                mnMatriculacionMousePressed(evt);
+                mnVentanaPrincipalMousePressed(evt);
             }
         });
-        mnMatriculacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnMatriculacionActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(mnMatriculacion);
+        jMenuBar1.add(mnVentanaPrincipal);
 
-        mnReportes.setText("Reportes");
-        mnReportes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                mnReportesMousePressed(evt);
-            }
-        });
-        jMenuBar1.add(mnReportes);
+        jMenu1.setText("Acerca De");
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -202,109 +149,20 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mnMatriculacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnMatriculacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mnMatriculacionActionPerformed
-
-    private void mnNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnNivelActionPerformed
+    private void mnVentanaPrincipalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnVentanaPrincipalMousePressed
         // TODO add your handling code here:
         limpiarFrame();
-         
-        panelNivel.setVisible(true);
-        panelNivel.setSize(570, 320);
-        panelNivel.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width
+        
+        panelPrincipal.setVisible(true);
+        panelPrincipal.setSize(770, 320);
+        panelPrincipal.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width
                 - getSize().width) / 2, (Toolkit.getDefaultToolkit().getScreenSize().height - getSize().height) / 2);
-        add(panelNivel);
-        revalidate();
-        repaint();
-
-    }//GEN-LAST:event_mnNivelActionPerformed
-
-    private void mnCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCategoriaActionPerformed
-        // TODO add your handling code here:
-        limpiarFrame();
-        panelCategoria.setVisible(true);
-        panelCategoria.setSize(610, 441);
-        panelCategoria.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width
-                - getSize().width) / 2, (Toolkit.getDefaultToolkit().getScreenSize().height - getSize().height) / 2);
-        add(panelCategoria);
-        revalidate();
-        repaint();
-    }//GEN-LAST:event_mnCategoriaActionPerformed
-
-    private void mnCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCursoActionPerformed
-        // TODO add your handling code here:
-        limpiarFrame();
-        panelRegistroCurso.setVisible(true);
-        panelRegistroCurso.setSize(500, 535);
-        panelRegistroCurso.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width
-                - getSize().width) / 2, (Toolkit.getDefaultToolkit().getScreenSize().height - getSize().height) / 2);
-        add(panelRegistroCurso);
-        
-        panelRegistroCurso.mostrarCategorias();
-        panelRegistroCurso.mostrarDocentes();
-        panelRegistroCurso.mostrarNiveles();
+        add(panelPrincipal);
         
         revalidate();
         repaint();
         
-    }//GEN-LAST:event_mnCursoActionPerformed
-
-    private void mnDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnDocenteActionPerformed
-        // TODO add your handling code here:
-        limpiarFrame();
-        registroDocente.setVisible(true);
-        registroDocente.setSize(364, 503);
-        registroDocente.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width
-                - getSize().width) / 2, (Toolkit.getDefaultToolkit().getScreenSize().height - getSize().height) / 2);
-        add(registroDocente);
-        revalidate();
-        repaint();
-        
-    }//GEN-LAST:event_mnDocenteActionPerformed
-
-    private void mnEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnEstudianteActionPerformed
-        // TODO add your handling code here:
-        limpiarFrame();
-        panelRegistroEstudiante.setVisible(true);
-        panelRegistroEstudiante.setSize(420, 320);
-        panelRegistroEstudiante.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width
-                - getSize().width) / 2, (Toolkit.getDefaultToolkit().getScreenSize().height - getSize().height) / 2);
-        add(panelRegistroEstudiante);
-        revalidate();
-        repaint();
-        
-    }//GEN-LAST:event_mnEstudianteActionPerformed
-
-    private void mnMatriculacionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnMatriculacionMousePressed
-        // TODO add your handling code here:
-        limpiarFrame();
-        panelMatriculacion.setVisible(true);
-        panelMatriculacion.setSize(520, 340);
-
-        panelMatriculacion.setLocation((int)pContenedor.getWidth()/2, (int)pContenedor.getHeight()/2);
-        add(panelMatriculacion);
-        revalidate();
-        repaint();
-        
-        
-    }//GEN-LAST:event_mnMatriculacionMousePressed
-
-    private void mnReportesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnReportesMousePressed
-        // TODO add your handling code here:
-        limpiarFrame();
-        
-        panelReportes.setVisible(true);
-        panelReportes.setSize(570, 320);
-        panelReportes.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width
-                - getSize().width) / 2, (Toolkit.getDefaultToolkit().getScreenSize().height - getSize().height) / 2);
-        panelReportes.llenarTabla();
-        add(panelReportes);
-        
-        revalidate();
-        repaint();
-        
-    }//GEN-LAST:event_mnReportesMousePressed
+    }//GEN-LAST:event_mnVentanaPrincipalMousePressed
      
     private void limpiarFrame(){
    
@@ -316,10 +174,22 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         panelMatriculacion.setVisible(false);
         panelReportes.setVisible(false);
         
+        //Paneles Nuevos
+        panelPrincipal.setVisible(false);
+        
     }
     
-    
-    
+    public void prueba(){
+        
+        limpiarFrame();
+        panelAdministrador.setVisible(true);
+        panelAdministrador.setSize(770, 320);
+        panelAdministrador.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width
+                - getSize().width) / 2, (Toolkit.getDefaultToolkit().getScreenSize().height - getSize().height) / 2);
+        add(panelAdministrador);
+        revalidate();
+        repaint();
+    }
     
     /**
      * @param args the command line arguments
@@ -357,16 +227,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JMenu mnAdministracion;
-    private javax.swing.JMenuItem mnCategoria;
-    private javax.swing.JMenuItem mnCurso;
-    private javax.swing.JMenuItem mnDocente;
-    private javax.swing.JMenuItem mnEstudiante;
-    private javax.swing.JMenu mnMatriculacion;
-    private javax.swing.JMenuItem mnNivel;
-    private javax.swing.JMenu mnReportes;
+    private javax.swing.JMenu mnVentanaPrincipal;
     private javax.swing.JPanel pContenedor;
     // End of variables declaration//GEN-END:variables
 }
