@@ -6,7 +6,6 @@
 package CapaInterfaz;
 
 import CapaInterfaz.panelesPrincipales.PnlAdministrador;
-import CapaInterfaz.panelesPrincipales.PnlPrincipal;
 import CapaNegocio.ClsNivel;
 import CapaNegocio.ClsCategoria;
 import CapaNegocio.ClsCurso;
@@ -30,7 +29,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     
     //Paneles Nuevos
     PnlPrincipal panelPrincipal;
-    PnlAdministrador panelAdministrador;
+    
     
     static ArrayList <ClsNivel> niveles;
     static ArrayList <ClsCategoria> categorias;
@@ -46,7 +45,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     public FrmMenuPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setExtendedState(MAXIMIZED_BOTH);
         revalidate();
         repaint();
         
@@ -73,6 +71,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         
         
         panelPrincipal = new PnlPrincipal();
+        
                 
         
     }
@@ -107,6 +106,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aprende Ahora");
+        setResizable(false);
 
         pContenedor.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         pContenedor.setEnabled(false);
@@ -115,11 +115,11 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         pContenedor.setLayout(pContenedorLayout);
         pContenedorLayout.setHorizontalGroup(
             pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGap(0, 846, Short.MAX_VALUE)
         );
         pContenedorLayout.setVerticalGroup(
             pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 403, Short.MAX_VALUE)
+            .addGap(0, 525, Short.MAX_VALUE)
         );
 
         mnVentanaPrincipal.setText("Ventana Principal");
@@ -152,19 +152,18 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private void mnVentanaPrincipalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnVentanaPrincipalMousePressed
         // TODO add your handling code here:
         limpiarFrame();
-        
         panelPrincipal.setVisible(true);
-        panelPrincipal.setSize(770, 320);
-        panelPrincipal.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width
-                - getSize().width) / 2, (Toolkit.getDefaultToolkit().getScreenSize().height - getSize().height) / 2);
+        panelPrincipal.setSize(850, 530);
+        panelPrincipal.setLocation(0,0);
         add(panelPrincipal);
-        
         revalidate();
         repaint();
         
     }//GEN-LAST:event_mnVentanaPrincipalMousePressed
      
     private void limpiarFrame(){
+        
+        panelPrincipal.limpiar();
    
         panelNivel.setVisible(false);
         panelCategoria.setVisible(false);
@@ -173,22 +172,9 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         panelRegistroEstudiante.setVisible(false);
         panelMatriculacion.setVisible(false);
         panelReportes.setVisible(false);
-        
         //Paneles Nuevos
         panelPrincipal.setVisible(false);
         
-    }
-    
-    public void prueba(){
-        
-        limpiarFrame();
-        panelAdministrador.setVisible(true);
-        panelAdministrador.setSize(770, 320);
-        panelAdministrador.setLocation((Toolkit.getDefaultToolkit().getScreenSize().width
-                - getSize().width) / 2, (Toolkit.getDefaultToolkit().getScreenSize().height - getSize().height) / 2);
-        add(panelAdministrador);
-        revalidate();
-        repaint();
     }
     
     /**
