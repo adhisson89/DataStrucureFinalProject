@@ -38,6 +38,13 @@ public class PnlListar extends javax.swing.JPanel {
             for (ClsEstudiante e : FrmMenuPrincipal.estudiantes) {
                 tablaEstudiantes.addRow(new Object[]{e.getNombre(), e.getApellido()});
             }
+            /*for (ClsEstudiante e : FrmMenuPrincipal.estudiantes) {
+                double[] calificaciones = e.getCalificaciones();
+                tablaEstudiantes.addRow(new Object[]{calificaciones[0], calificaciones[1],
+                    calificaciones[2], calificaciones[3], calificaciones[4], calificaciones[5],
+                    calificaciones[6], calificaciones[7], calificaciones[8], calificaciones[9]});
+            }*/
+            
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e);
         }

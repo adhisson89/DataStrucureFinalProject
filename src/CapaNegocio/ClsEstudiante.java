@@ -6,11 +6,25 @@ import java.util.List;
 
 public class ClsEstudiante extends ClsPersona {
     private ArrayList <ClsCurso> cursos;
-
+    
+    private double calificaciones[];
     
     public ClsEstudiante(String nombre, String apellido, String cedula, String correoElectronico) {
         super(nombre, apellido, cedula, correoElectronico);
+        this.calificaciones = new double[10];
+        for(int i=0; i< calificaciones.length; i++){
+            calificaciones[i]=0;
+        }
     }
+
+    public double[] getCalificaciones() {
+        return calificaciones;
+    }
+
+    public void setCalificaciones(double[] calificaciones) {
+        this.calificaciones = calificaciones;
+    }
+
     
     public void agregarCurso(ClsCurso c){
         this.cursos.add(c);

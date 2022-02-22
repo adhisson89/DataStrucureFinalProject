@@ -70,4 +70,13 @@ public class ClsValidadores {
     public static boolean validadorDigitos(String digitos) {
         return digitos.matches("^[0-9]*$");
     }
+    
+    public static boolean validadorNotas(String nota){
+        boolean bandera = false;
+        if(Double.parseDouble(nota)>= 0 && Double.parseDouble(nota)<= 10){
+            bandera = true;
+        }
+        return bandera;
+    }
+    
 }

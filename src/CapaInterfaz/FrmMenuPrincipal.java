@@ -80,7 +80,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Aprende Ahora");
+        setTitle("Gotitas del Saber");
         setResizable(false);
 
         mnAdministrador.setText("Administrador");
@@ -122,6 +122,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 529, Short.MAX_VALUE)
         );
+
+        getAccessibleContext().setAccessibleName("Gotitas del Saber");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
