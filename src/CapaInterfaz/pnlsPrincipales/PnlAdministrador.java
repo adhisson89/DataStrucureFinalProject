@@ -155,6 +155,11 @@ public class PnlAdministrador extends javax.swing.JPanel {
     }//GEN-LAST:event_btnNivelActionPerformed
 
     private void btnCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCursoActionPerformed
+        
+        pnlCurso.mostrarCategorias();
+        pnlCurso.mostrarDocentes();
+        pnlCurso.mostrarNiveles();
+              
         pContenedor.setVisible(false);
         pnlCurso.setVisible(true);
         pnlCurso.setSize(850, 529);
@@ -213,10 +218,9 @@ public class PnlAdministrador extends javax.swing.JPanel {
         pnlEliminarEstudiante.setVisible(false);
         pnlListar.setVisible(false);
         
-        
-        
         pContenedor.setVisible(true);
     }
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

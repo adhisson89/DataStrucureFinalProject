@@ -5,6 +5,8 @@
  */
 package CapaInterfaz;
 
+import CapaDatos.ClsDatos;
+import CapaInterfaz.pnlsPrincipales.PnlAcercaDe;
 import CapaInterfaz.pnlsPrincipales.PnlAdministrador;
 import CapaInterfaz.pnlsPrincipales.PnlDocente;
 import CapaInterfaz.pnlsPrincipales.PnlEstudiante;
@@ -23,13 +25,14 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     PnlAdministrador panelAdministrador;
     PnlDocente panelDocente;
     PnlEstudiante panelEstudiante;
+    PnlAcercaDe panelAcercaDe;
     
     
-    public static ArrayList <ClsNivel> niveles;
+   /* public static ArrayList <ClsNivel> niveles;
     public static ArrayList <ClsCategoria> categorias;
     public static ArrayList <ClsCurso> cursos;
     public static ArrayList <ClsDocente> docentes;
-    public static Vector <ClsEstudiante> estudiantes;
+    public static Vector <ClsEstudiante> estudiantes;*/
     
     public FrmMenuPrincipal() {
         initComponents();
@@ -37,16 +40,17 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         revalidate();
         repaint();
         
-        niveles = new ArrayList<>();
+        /*niveles = new ArrayList<>();
         categorias = new ArrayList<>();
         cursos = new ArrayList<>();
         docentes = new ArrayList<>();
-        estudiantes = new Vector<>();
+        estudiantes = new Vector<>();*/
         
-        
+        ClsDatos.inicializarListas();
         panelAdministrador = new PnlAdministrador();
         panelDocente = new PnlDocente();
         panelEstudiante = new PnlEstudiante();
+        panelAcercaDe = new PnlAcercaDe();
  
     }
 
@@ -64,7 +68,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         mnAdministrador = new javax.swing.JMenu();
         mnDocente = new javax.swing.JMenu();
         mnEstudiante = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
+        mnAcercaDe = new javax.swing.JMenu();
 
         jPanel2.setForeground(new java.awt.Color(0, 0, 250));
 
@@ -107,8 +111,13 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         jMenuBar1.add(mnEstudiante);
 
-        jMenu1.setText("Acerca De");
-        jMenuBar1.add(jMenu1);
+        mnAcercaDe.setText("Acerca De");
+        mnAcercaDe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mnAcercaDeMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(mnAcercaDe);
 
         setJMenuBar(jMenuBar1);
 
@@ -122,8 +131,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 529, Short.MAX_VALUE)
         );
-
-        getAccessibleContext().setAccessibleName("Gotitas del Saber");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -157,11 +164,22 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         revalidate();
         repaint();
     }//GEN-LAST:event_mnEstudianteMouseClicked
+
+    private void mnAcercaDeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnAcercaDeMouseClicked
+        limpiarFrame();
+        panelAcercaDe.setVisible(true);
+        panelAcercaDe.setSize(850, 530);
+        panelAcercaDe.setLocation(0,0);
+        add(panelAcercaDe);
+        revalidate();
+        repaint();
+    }//GEN-LAST:event_mnAcercaDeMouseClicked
      
     private void limpiarFrame(){
         panelEstudiante.setVisible(false);
         panelDocente.setVisible(false);
         panelAdministrador.setVisible(false);
+        panelAcercaDe.setVisible(false);
         panelAdministrador.limpiar();
         panelEstudiante.limpiar();
         panelDocente.limpiar();
@@ -204,9 +222,9 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JMenu mnAcercaDe;
     private javax.swing.JMenu mnAdministrador;
     private javax.swing.JMenu mnDocente;
     private javax.swing.JMenu mnEstudiante;

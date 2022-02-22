@@ -5,6 +5,7 @@
  */
 package CapaInterfaz.pnlsSecundarios.pnlsDocente;
 
+import CapaDatos.ClsDatos;
 import CapaDatos.ClsMetodos;
 import CapaDatos.ClsValidadores;
 import CapaInterfaz.FrmMenuPrincipal;
@@ -242,7 +243,7 @@ public class PnlNotas extends javax.swing.JPanel {
     }//GEN-LAST:event_txtNotaKeyReleased
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        estudiante = ClsMetodos.buscarPersonaPorCIEstudiante(FrmMenuPrincipal.estudiantes, txtCedula.getText());
+        estudiante = ClsMetodos.buscarPersonaPorCIEstudiante(ClsDatos.estudiantes, txtCedula.getText());
         if (estudiante == null) {
             lblErrorEstudiante.setVisible(true);
             btnGuardar.setEnabled(false);
@@ -257,7 +258,7 @@ public class PnlNotas extends javax.swing.JPanel {
         // limpiar la tabla
         try {
             dtmTablaNotas.setRowCount(0);
-            for (ClsEstudiante e : FrmMenuPrincipal.estudiantes) {
+            for (ClsEstudiante e : ClsDatos.estudiantes) {
                 if (estudiante == e) {
                     double[] calificaciones = e.getCalificaciones();
                     dtmTablaNotas.addRow(new Object[]{calificaciones[0], calificaciones[1],

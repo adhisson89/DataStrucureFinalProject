@@ -5,6 +5,7 @@
  */
 package CapaInterfaz.pnlsSecundarios.pnlsAdministrador;
 
+import CapaDatos.ClsDatos;
 import CapaInterfaz.FrmMenuPrincipal;
 import CapaNegocio.*;
 import javax.swing.JOptionPane;
@@ -32,10 +33,10 @@ public class PnlListar extends javax.swing.JPanel {
         try {
             tablaDocentes.setRowCount(0);
             tablaEstudiantes.setRowCount(0);
-            for (ClsDocente d : FrmMenuPrincipal.docentes) {
+            for (ClsDocente d : ClsDatos.docentes) {
                 tablaDocentes.addRow(new Object[]{d.getNombre(), d.getApellido()});
             }
-            for (ClsEstudiante e : FrmMenuPrincipal.estudiantes) {
+            for (ClsEstudiante e : ClsDatos.estudiantes) {
                 tablaEstudiantes.addRow(new Object[]{e.getNombre(), e.getApellido()});
             }
             /*for (ClsEstudiante e : FrmMenuPrincipal.estudiantes) {

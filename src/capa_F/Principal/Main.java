@@ -9,7 +9,7 @@ import capa_F.Interfaz.Juego;
  */
 
 public class Main {
-
+    
     public static void main(String[] args) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

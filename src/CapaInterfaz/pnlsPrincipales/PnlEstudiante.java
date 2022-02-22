@@ -120,6 +120,9 @@ public class PnlEstudiante extends javax.swing.JPanel {
 
     private void btnMatriculacionEtdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatriculacionEtdActionPerformed
         limpiar();
+        
+        pnlMatriculacionEstudiante.mostrarCategorias();
+        
         pContenedor.setVisible(false);
         pnlMatriculacionEstudiante.setVisible(true);
         pnlMatriculacionEstudiante.setSize(850, 529);

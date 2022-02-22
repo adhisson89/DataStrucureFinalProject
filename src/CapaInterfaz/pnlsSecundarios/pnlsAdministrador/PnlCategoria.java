@@ -5,7 +5,7 @@
  */
 package CapaInterfaz.pnlsSecundarios.pnlsAdministrador;
 
-import CapaInterfaz.FrmMenuPrincipal;
+import CapaDatos.ClsDatos;
 import CapaNegocio.ClsCategoria;
 import javax.swing.JOptionPane;
 
@@ -86,8 +86,7 @@ public class PnlCategoria extends javax.swing.JPanel {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        
-        FrmMenuPrincipal.categorias.add(new ClsCategoria(txtNombre.getText(), txaDescripcion.getText()));
+        ClsDatos.categorias.add(new ClsCategoria(txtNombre.getText(), txaDescripcion.getText()));
         JOptionPane.showMessageDialog(null, "Se registro la categoria exitosamente.");
         
     }//GEN-LAST:event_btnGuardarActionPerformed

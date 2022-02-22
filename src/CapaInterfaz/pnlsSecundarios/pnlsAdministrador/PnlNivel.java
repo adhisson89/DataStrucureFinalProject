@@ -5,11 +5,13 @@
  */
 package CapaInterfaz.pnlsSecundarios.pnlsAdministrador;
 
+import CapaDatos.ClsDatos;
 import CapaInterfaz.FrmMenuPrincipal;
 import CapaInterfaz.pnlsPrincipales.PnlAdministrador;
 import CapaNegocio.ClsNivel;
 import java.util.ArrayList;
-import javax.swing.JOptionPane; // 270.17
+import java.util.Stack;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class PnlNivel extends javax.swing.JPanel {
@@ -125,8 +127,8 @@ public class PnlNivel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        ArrayList <String> requisistos = new ArrayList();
+        //Uso de Pilas
+        Stack <String> requisistos = new Stack();
         if( chkExpresionOral.isSelected()) requisistos.add("Expresion Oral");
         if( chkCapacidadAnalisis.isSelected()) requisistos.add("Expresion Oral");
         if( chkCompresion.isSelected()) requisistos.add("Expresion Oral");
@@ -134,7 +136,7 @@ public class PnlNivel extends javax.swing.JPanel {
         if( chkRazonamiento.isSelected()) requisistos.add("Expresion Oral");
         if( chkUsoDeTI.isSelected()) requisistos.add("Expresion Oral");
         
-        FrmMenuPrincipal.niveles.add(new ClsNivel(txtNombre.getText(), requisistos));
+        ClsDatos.niveles.add(new ClsNivel(txtNombre.getText(), requisistos));
         JOptionPane.showMessageDialog(null, "El nivel se registro con exito"); 
     }//GEN-LAST:event_jButton1ActionPerformed
 

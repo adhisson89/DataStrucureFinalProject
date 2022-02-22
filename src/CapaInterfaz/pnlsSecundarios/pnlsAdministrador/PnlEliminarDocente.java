@@ -5,6 +5,7 @@
  */
 package CapaInterfaz.pnlsSecundarios.pnlsAdministrador;
 
+import CapaDatos.ClsDatos;
 import CapaDatos.ClsMetodos;
 import CapaInterfaz.FrmMenuPrincipal;
 import CapaNegocio.ClsDocente;
@@ -137,7 +138,7 @@ public class PnlEliminarDocente extends javax.swing.JPanel {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        docente = ClsMetodos.buscarPersonaPorCIDocente(FrmMenuPrincipal.docentes, txtCedula.getText());
+        docente = ClsMetodos.buscarPersonaPorCIDocente(ClsDatos.docentes, txtCedula.getText());
         
         if (docente == null) {
             lblErrorCedula.setVisible(true);
@@ -154,7 +155,7 @@ public class PnlEliminarDocente extends javax.swing.JPanel {
         // TODO add your handling code here:
         int aux = JOptionPane.showConfirmDialog(null, "Realmente desea eliminar el docente?","Confirmar",JOptionPane.YES_NO_OPTION);
         if (aux == 0){
-            FrmMenuPrincipal.docentes.remove(docente);
+            ClsDatos.docentes.remove(docente);
             JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente");
         }else{
             JOptionPane.showMessageDialog(null, "Se ha cancelado la operación");

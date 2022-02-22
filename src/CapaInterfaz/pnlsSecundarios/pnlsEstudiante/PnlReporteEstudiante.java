@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package CapaInterfaz.pnlsSecundarios.pnlsEstudiante;
 
 
+import CapaDatos.ClsDatos;
 import CapaDatos.ClsMetodos;
-import CapaInterfaz.FrmMenuPrincipal;
 import CapaNegocio.ClsEstudiante;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -30,7 +25,7 @@ public class PnlReporteEstudiante extends javax.swing.JPanel {
         // limpiar la dtmTablaNotas
         try {
             dtmTablaNotas.setRowCount(0);
-            for (ClsEstudiante e : FrmMenuPrincipal.estudiantes) {
+            for (ClsEstudiante e : ClsDatos.estudiantes) {
                 if (estudiante == e) {
                     double[] calificaciones = e.getCalificaciones();
                     dtmTablaNotas.addRow(new Object[]{calificaciones[0], calificaciones[1],
@@ -151,7 +146,7 @@ public class PnlReporteEstudiante extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        estudiante = ClsMetodos.buscarPersonaPorCIEstudiante(FrmMenuPrincipal.estudiantes, txtCedula.getText());
+        estudiante = ClsMetodos.buscarPersonaPorCIEstudiante(ClsDatos.estudiantes, txtCedula.getText());
         if (estudiante == null) {
             lblErrorEstudiante.setVisible(true);
         } else {

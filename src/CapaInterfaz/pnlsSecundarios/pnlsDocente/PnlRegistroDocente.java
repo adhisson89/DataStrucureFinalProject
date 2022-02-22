@@ -5,6 +5,7 @@
  */
 package CapaInterfaz.pnlsSecundarios.pnlsDocente;
 
+import CapaDatos.ClsDatos;
 import CapaInterfaz.FrmMenuPrincipal;
 import CapaNegocio.ClsDocente;
 import CapaDatos.ClsValidadores;
@@ -206,7 +207,7 @@ public class PnlRegistroDocente extends javax.swing.JPanel {
         String correo = txtCorreo.getText();
         String celular = txtCelular.getText();
         String presentacion = txaPresentacion.getText();
-        FrmMenuPrincipal.docentes.add(new ClsDocente(presentacion, celular, nombre, apellido, ci, correo));
+        ClsDatos.docentes.add(new ClsDocente(presentacion, celular, nombre, apellido, ci, correo));
         JOptionPane.showMessageDialog(null, "El docente se registro con exito");
     }//GEN-LAST:event_btnGuardarActionPerformed
 
