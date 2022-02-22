@@ -17,12 +17,14 @@ public class PnlAdministrador extends javax.swing.JPanel {
     PnlNivel pnlNivel;
     PnlRegistroCurso pnlCurso;
     PnlCategoria pnlCategoria;
+    PnlModificarDocente pnlEliminarDocente;
 
     public PnlAdministrador() {
         initComponents();
         pnlNivel = new PnlNivel();
         pnlCurso = new PnlRegistroCurso();
         pnlCategoria = new PnlCategoria();
+        pnlEliminarDocente = new PnlModificarDocente();
     }
 
     /**
@@ -67,6 +69,11 @@ public class PnlAdministrador extends javax.swing.JPanel {
 
         btnDocente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 9.png"))); // NOI18N
         btnDocente.setText("Modificar Docente");
+        btnDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDocenteActionPerformed(evt);
+            }
+        });
 
         btnEstudiante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 6.png"))); // NOI18N
         btnEstudiante.setText("Modificar Estudiante");
@@ -153,11 +160,26 @@ public class PnlAdministrador extends javax.swing.JPanel {
         revalidate();
         repaint();
     }//GEN-LAST:event_btnCategoriaActionPerformed
+
+    private void btnDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocenteActionPerformed
+        // TODO add your handling code here:
+        pContenedor.setVisible(false);
+        pnlEliminarDocente.setVisible(true);
+        pnlEliminarDocente.setSize(850, 529);
+        pnlEliminarDocente.setLocation(0, 0);
+        add(pnlEliminarDocente);
+        revalidate();
+        repaint();
+        
+        
+        
+    }//GEN-LAST:event_btnDocenteActionPerformed
     
     public void limpiar(){
         pnlNivel.setVisible(false);
         pnlCurso.setVisible(false);
         pnlCategoria.setVisible(false);
+        pnlEliminarDocente.setVisible(false);
         pContenedor.setVisible(true);
     }
     

@@ -1,9 +1,10 @@
 package CapaNegocio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public abstract class ClsPersona {
+public abstract class ClsPersona implements Serializable {
     protected String nombre;
     protected String apellido;
     protected String cedula;

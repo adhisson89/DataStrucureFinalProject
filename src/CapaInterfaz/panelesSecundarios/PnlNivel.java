@@ -135,10 +135,7 @@ public class PnlNivel extends javax.swing.JPanel {
         if( chkUsoDeTI.isSelected()) requisistos.add("Expresion Oral");
         
         FrmMenuPrincipal.niveles.add(new ClsNivel(txtNombre.getText(), requisistos));
-        
-        JOptionPane.showMessageDialog(null, "El nivel se registro con exito");
-        
-        
+        JOptionPane.showMessageDialog(null, "El nivel se registro con exito"); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

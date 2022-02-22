@@ -19,7 +19,7 @@ public class ClsDocente extends ClsPersona {
     public void agregarCurso(ClsCurso c){
         this.cursos.add(c);
     }
-    
+   
     
     
 }
