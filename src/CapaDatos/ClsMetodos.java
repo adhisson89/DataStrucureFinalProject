@@ -6,7 +6,9 @@
 package CapaDatos;
 
 import CapaNegocio.ClsDocente;
+import CapaNegocio.ClsEstudiante;
 import java.util.ArrayList;
+import java.util.Vector;
 
 /**
  *
@@ -14,7 +16,7 @@ import java.util.ArrayList;
  */
 public class ClsMetodos {
     
-    public static ClsDocente buscarPersonaPorCI(ArrayList<ClsDocente> lista, String cedulaBuscar) {
+    public static ClsDocente buscarPersonaPorCIDocente(ArrayList<ClsDocente> lista, String cedulaBuscar) {
         ClsDocente docenteEncontrado = null;
         for (ClsDocente p : lista) {
             if (p.getCedula().equals(cedulaBuscar)) {
@@ -23,6 +25,17 @@ public class ClsMetodos {
             }
         }
         return docenteEncontrado;
+    }
+    
+    public static ClsEstudiante buscarPersonaPorCIEstudiante(Vector<ClsEstudiante> lista, String cedulaBuscar) {
+        ClsEstudiante estudianteEncontrado = null;
+        for (ClsEstudiante e : lista) {
+            if (e.getCedula().equals(cedulaBuscar)) {
+                estudianteEncontrado = e;
+                break;
+            }
+        }
+        return estudianteEncontrado;
     }
     
 }

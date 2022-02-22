@@ -5,8 +5,9 @@
  */
 package CapaInterfaz;
 
-
-import CapaInterfaz.panelesPrincipales.*;
+import CapaInterfaz.pnlsPrincipales.PnlAdministrador;
+import CapaInterfaz.pnlsPrincipales.PnlDocente;
+import CapaInterfaz.pnlsPrincipales.PnlEstudiante;
 import CapaNegocio.ClsNivel;
 import CapaNegocio.ClsCategoria;
 import CapaNegocio.ClsCurso;
@@ -18,14 +19,6 @@ import java.util.Vector;
 
 public class FrmMenuPrincipal extends javax.swing.JFrame {
 
-    /*PnlNivel panelNivel;
-    PnlCategoria panelCategoria;
-    PnlRegistroCurso panelRegistroCurso;
-    PnlRegistroDocente registroDocente;
-    PnlRegistroEstudiante panelRegistroEstudiante;
-    PnlMatriculacionEstudiante panelMatriculacion;
-    PnlReporteEstudiante panelReportes;*/
-    
     //Paneles Nuevos
     PnlAdministrador panelAdministrador;
     PnlDocente panelDocente;
@@ -36,12 +29,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     public static ArrayList <ClsCategoria> categorias;
     public static ArrayList <ClsCurso> cursos;
     public static ArrayList <ClsDocente> docentes;
-    //static ArrayList <Estudiante> estudiantes;
     public static Vector <ClsEstudiante> estudiantes;
-    
-    /**
-     * Creates new form FrmMenuPrincipal
-     */
     
     public FrmMenuPrincipal() {
         initComponents();
@@ -174,6 +162,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         panelAdministrador.setVisible(false);
         panelAdministrador.limpiar();
         panelEstudiante.limpiar();
+        panelDocente.limpiar();
 
     }
     

@@ -3,24 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CapaInterfaz.panelesSecundarios;
+package CapaInterfaz.pnlsSecundarios.pnlsAdministrador;
 
 import CapaDatos.ClsMetodos;
 import CapaInterfaz.FrmMenuPrincipal;
 import CapaNegocio.ClsDocente;
+import CapaNegocio.ClsEstudiante;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Adhisson Cedeño adhisson.cedeno@epn.edu.ec
  */
-public class PnlModificarDocente extends javax.swing.JPanel {
+public class PnlEliminarEstudiante extends javax.swing.JPanel {
     
-    ClsDocente docente;
+    ClsEstudiante estudiante;
     /**
      * Creates new form PnlModificarDocente
      */
-    public PnlModificarDocente() {
+    public PnlEliminarEstudiante() {
         initComponents();
         lblErrorCedula.setVisible(false);
         btnEliminar.setEnabled(false);
@@ -46,9 +47,9 @@ public class PnlModificarDocente extends javax.swing.JPanel {
         btnEliminar = new javax.swing.JButton();
         lblErrorCedula = new javax.swing.JLabel();
 
-        jLabel1.setText("Eliminar Docente");
+        jLabel1.setText("Eliminar Estudiante");
 
-        jLabel2.setText("Ingrese el número de cédula del docente:");
+        jLabel2.setText("Ingrese el número de cédula del estudiante:");
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +110,7 @@ public class PnlModificarDocente extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(287, 287, 287)
                         .addComponent(lblErrorCedula)))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,15 +138,14 @@ public class PnlModificarDocente extends javax.swing.JPanel {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        docente = ClsMetodos.buscarPersonaPorCI(FrmMenuPrincipal.docentes, txtCedula.getText());
+        estudiante = ClsMetodos.buscarPersonaPorCIEstudiante(FrmMenuPrincipal.estudiantes, txtCedula.getText());
         
-        if (docente == null) {
+        if (estudiante == null) {
             lblErrorCedula.setVisible(true);
             btnEliminar.setEnabled(false);
-            
         } else {
-            txtNombre.setText(docente.getNombre());
-            txtNombre.setText(docente.getApellido());
+            txtNombre.setText(estudiante.getNombre());
+            txtApellido.setText(estudiante.getApellido());
             lblErrorCedula.setVisible(false);
             btnEliminar.setEnabled(true);
         }
@@ -155,7 +155,7 @@ public class PnlModificarDocente extends javax.swing.JPanel {
         // TODO add your handling code here:
         int aux = JOptionPane.showConfirmDialog(null, "Realmente desea eliminar el docente?","Confirmar",JOptionPane.YES_NO_OPTION);
         if (aux == 0){
-            FrmMenuPrincipal.docentes.remove(docente);
+            FrmMenuPrincipal.estudiantes.remove(estudiante);
             JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente");
         }else{
             JOptionPane.showMessageDialog(null, "Se ha cancelado la operación");

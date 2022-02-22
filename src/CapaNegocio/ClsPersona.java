@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public abstract class ClsPersona implements Serializable {
+public class ClsPersona implements Serializable {
     protected String nombre;
     protected String apellido;
     protected String cedula;

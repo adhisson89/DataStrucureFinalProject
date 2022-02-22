@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CapaInterfaz.panelesSecundarios;
+package CapaInterfaz.pnlsSecundarios.pnlsEstudiante;
 
 import CapaInterfaz.FrmMenuPrincipal;
 import CapaNegocio.ClsCategoria;
 import CapaNegocio.ClsCurso;
 import CapaNegocio.ClsEstudiante;
-import CapaNegocio.ClsValidadores;
+import CapaDatos.ClsValidadores;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 

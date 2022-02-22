@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CapaInterfaz.panelesPrincipales;
+package CapaInterfaz.pnlsPrincipales;
 
-import CapaInterfaz.panelesSecundarios.PnlMatriculacionEstudiante;
-import CapaInterfaz.panelesSecundarios.PnlRegistroEstudiante;
-import CapaInterfaz.panelesSecundarios.PnlReporteEstudiante;
+import CapaInterfaz.pnlsSecundarios.pnlsEstudiante.PnlMatriculacionEstudiante;
+import CapaInterfaz.pnlsSecundarios.pnlsEstudiante.PnlRegistroEstudiante;
+import CapaInterfaz.pnlsSecundarios.pnlsEstudiante.PnlReporteEstudiante;
 
 public class PnlEstudiante extends javax.swing.JPanel {
 

@@ -3,28 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CapaInterfaz.panelesPrincipales;
+package CapaInterfaz.pnlsPrincipales;
 
-import CapaInterfaz.panelesSecundarios.*;
+import CapaInterfaz.pnlsSecundarios.pnlsAdministrador.*;
 
-
-/**
- *
- * @author Adhisson Cedeño adhisson.cedeno@epn.edu.ec
- */
 public class PnlAdministrador extends javax.swing.JPanel {
     
     PnlNivel pnlNivel;
     PnlRegistroCurso pnlCurso;
     PnlCategoria pnlCategoria;
-    PnlModificarDocente pnlEliminarDocente;
+    PnlEliminarDocente pnlEliminarDocente;
+    PnlEliminarEstudiante pnlEliminarEstudiante;
+    PnlListar pnlListar;
 
     public PnlAdministrador() {
         initComponents();
         pnlNivel = new PnlNivel();
         pnlCurso = new PnlRegistroCurso();
         pnlCategoria = new PnlCategoria();
-        pnlEliminarDocente = new PnlModificarDocente();
+        pnlEliminarDocente = new PnlEliminarDocente();
+        pnlEliminarEstudiante = new PnlEliminarEstudiante();
+        pnlListar = new PnlListar();
     }
 
     /**
@@ -41,6 +40,7 @@ public class PnlAdministrador extends javax.swing.JPanel {
         btnCurso = new javax.swing.JButton();
         btnCategoria = new javax.swing.JButton();
         btnDocente = new javax.swing.JButton();
+        btnListar = new javax.swing.JButton();
         btnEstudiante = new javax.swing.JButton();
 
         btnNivel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 22.png"))); // NOI18N
@@ -68,15 +68,28 @@ public class PnlAdministrador extends javax.swing.JPanel {
         });
 
         btnDocente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 9.png"))); // NOI18N
-        btnDocente.setText("Modificar Docente");
+        btnDocente.setText("Eliminar Docente");
         btnDocente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDocenteActionPerformed(evt);
             }
         });
 
+        btnListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 36.png"))); // NOI18N
+        btnListar.setText("Listar");
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarActionPerformed(evt);
+            }
+        });
+
         btnEstudiante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 6.png"))); // NOI18N
-        btnEstudiante.setText("Modificar Estudiante");
+        btnEstudiante.setText("Eliminar Estudiante");
+        btnEstudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstudianteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pContenedorLayout = new javax.swing.GroupLayout(pContenedor);
         pContenedor.setLayout(pContenedorLayout);
@@ -84,21 +97,19 @@ public class PnlAdministrador extends javax.swing.JPanel {
             pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pContenedorLayout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addGroup(pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnNivel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                    .addComponent(btnCategoria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                    .addComponent(btnEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
                 .addGroup(pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCurso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDocente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDocente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnListar, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(99, 99, 99))
-            .addGroup(pContenedorLayout.createSequentialGroup()
-                .addGap(304, 304, 304)
-                .addComponent(btnEstudiante)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pContenedorLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCategoria, btnCurso, btnDocente, btnEstudiante, btnNivel});
+        pContenedorLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCategoria, btnCurso, btnDocente, btnListar, btnNivel});
 
         pContenedorLayout.setVerticalGroup(
             pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,14 +120,16 @@ public class PnlAdministrador extends javax.swing.JPanel {
                     .addComponent(btnCurso))
                 .addGap(66, 66, 66)
                 .addGroup(pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnListar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGroup(pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDocente)
-                    .addComponent(btnCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addComponent(btnEstudiante)
-                .addContainerGap(81, Short.MAX_VALUE))
+                    .addComponent(btnEstudiante))
+                .addGap(57, 57, 57))
         );
 
-        pContenedorLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCategoria, btnCurso, btnDocente, btnEstudiante, btnNivel});
+        pContenedorLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCategoria, btnCurso, btnDocente, btnListar, btnNivel});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -162,7 +175,6 @@ public class PnlAdministrador extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCategoriaActionPerformed
 
     private void btnDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocenteActionPerformed
-        // TODO add your handling code here:
         pContenedor.setVisible(false);
         pnlEliminarDocente.setVisible(true);
         pnlEliminarDocente.setSize(850, 529);
@@ -170,16 +182,39 @@ public class PnlAdministrador extends javax.swing.JPanel {
         add(pnlEliminarDocente);
         revalidate();
         repaint();
-        
-        
-        
     }//GEN-LAST:event_btnDocenteActionPerformed
+
+    private void btnEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstudianteActionPerformed
+        pContenedor.setVisible(false);
+        pnlEliminarEstudiante.setVisible(true);
+        pnlEliminarEstudiante.setSize(850, 529);
+        pnlEliminarEstudiante.setLocation(0, 0);
+        add(pnlEliminarEstudiante);
+        revalidate();
+        repaint();
+    }//GEN-LAST:event_btnEstudianteActionPerformed
+
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+        pContenedor.setVisible(false);
+        pnlListar.llenarTablas();
+        pnlListar.setVisible(true);
+        pnlListar.setSize(850, 529);
+        pnlListar.setLocation(0, 0);
+        add(pnlListar);
+        revalidate();
+        repaint();
+    }//GEN-LAST:event_btnListarActionPerformed
     
     public void limpiar(){
         pnlNivel.setVisible(false);
         pnlCurso.setVisible(false);
         pnlCategoria.setVisible(false);
         pnlEliminarDocente.setVisible(false);
+        pnlEliminarEstudiante.setVisible(false);
+        pnlListar.setVisible(false);
+        
+        
+        
         pContenedor.setVisible(true);
     }
     
@@ -189,6 +224,7 @@ public class PnlAdministrador extends javax.swing.JPanel {
     private javax.swing.JButton btnCurso;
     private javax.swing.JButton btnDocente;
     private javax.swing.JButton btnEstudiante;
+    private javax.swing.JButton btnListar;
     private javax.swing.JButton btnNivel;
     private javax.swing.JPanel pContenedor;
     // End of variables declaration//GEN-END:variables

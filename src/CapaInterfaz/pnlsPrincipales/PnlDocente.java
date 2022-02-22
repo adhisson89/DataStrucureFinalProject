@@ -3,19 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CapaInterfaz.panelesPrincipales;
+package CapaInterfaz.pnlsPrincipales;
+
+import CapaInterfaz.pnlsSecundarios.pnlsDocente.PnlRegistroDocente;
 
 /**
  *
  * @author danie
  */
 public class PnlDocente extends javax.swing.JPanel {
-
+    
+    PnlRegistroDocente pnlRegistrarDocente;
     /**
      * Creates new form PnlDocente
      */
     public PnlDocente() {
         initComponents();
+        pnlRegistrarDocente = new PnlRegistroDocente();
     }
 
     /**
@@ -27,13 +31,18 @@ public class PnlDocente extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        pContenedor = new javax.swing.JPanel();
         btnRegistroDocente = new javax.swing.JButton();
         btnIngresoCalificaciones = new javax.swing.JButton();
         btnHorarios = new javax.swing.JButton();
 
         btnRegistroDocente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 9.png"))); // NOI18N
         btnRegistroDocente.setText("Registro del Docente");
+        btnRegistroDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroDocenteActionPerformed(evt);
+            }
+        });
 
         btnIngresoCalificaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 7.png"))); // NOI18N
         btnIngresoCalificaciones.setText("Ingreso de Calificaciones");
@@ -41,11 +50,11 @@ public class PnlDocente extends javax.swing.JPanel {
         btnHorarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaInterfaz/Imagenes/Recurso 8.png"))); // NOI18N
         btnHorarios.setText("Horarios");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pContenedorLayout = new javax.swing.GroupLayout(pContenedor);
+        pContenedor.setLayout(pContenedorLayout);
+        pContenedorLayout.setHorizontalGroup(
+            pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pContenedorLayout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(btnRegistroDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -55,38 +64,53 @@ public class PnlDocente extends javax.swing.JPanel {
                 .addContainerGap(65, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHorarios, btnIngresoCalificaciones, btnRegistroDocente});
+        pContenedorLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHorarios, btnIngresoCalificaciones, btnRegistroDocente});
 
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pContenedorLayout.setVerticalGroup(
+            pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pContenedorLayout.createSequentialGroup()
                 .addGap(210, 210, 210)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistroDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnIngresoCalificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(220, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnHorarios, btnIngresoCalificaciones, btnRegistroDocente});
+        pContenedorLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnHorarios, btnIngresoCalificaciones, btnRegistroDocente});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pContenedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pContenedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRegistroDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroDocenteActionPerformed
+        // TODO add your handling code here:
+        pContenedor.setVisible(false);
+        pnlRegistrarDocente.setVisible(true);
+        pnlRegistrarDocente.setSize(850, 529);
+        pnlRegistrarDocente.setLocation(0, 0);
+        add(pnlRegistrarDocente);
+        revalidate();
+        repaint();
+    }//GEN-LAST:event_btnRegistroDocenteActionPerformed
+
+    public void limpiar(){
+        pnlRegistrarDocente.setVisible(false);
+        pContenedor.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHorarios;
     private javax.swing.JButton btnIngresoCalificaciones;
     private javax.swing.JButton btnRegistroDocente;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel pContenedor;
     // End of variables declaration//GEN-END:variables
 }

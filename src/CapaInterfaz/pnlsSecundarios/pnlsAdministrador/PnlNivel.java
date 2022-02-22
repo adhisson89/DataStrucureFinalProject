@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CapaInterfaz.panelesSecundarios;
+package CapaInterfaz.pnlsSecundarios.pnlsAdministrador;
 
 import CapaInterfaz.FrmMenuPrincipal;
-import CapaInterfaz.panelesPrincipales.PnlAdministrador;
+import CapaInterfaz.pnlsPrincipales.PnlAdministrador;
 import CapaNegocio.ClsNivel;
 import java.util.ArrayList;
 import javax.swing.JOptionPane; // 270.17
