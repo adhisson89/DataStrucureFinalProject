@@ -256,13 +256,16 @@ public class PnlNotas extends javax.swing.JPanel {
     public void llenarNotas(){
         // limpiar la tabla
         try {
+            dtmTablaNotas.setRowCount(0);
             for (ClsEstudiante e : FrmMenuPrincipal.estudiantes) {
-                double[] calificaciones = e.getCalificaciones();
-                dtmTablaNotas.addRow(new Object[]{calificaciones[0], calificaciones[1],
-                    calificaciones[2], calificaciones[3], calificaciones[4], calificaciones[5],
-                    calificaciones[6], calificaciones[7], calificaciones[8], calificaciones[9]});
+                if (estudiante == e) {
+                    double[] calificaciones = e.getCalificaciones();
+                    dtmTablaNotas.addRow(new Object[]{calificaciones[0], calificaciones[1],
+                        calificaciones[2], calificaciones[3], calificaciones[4], calificaciones[5],
+                        calificaciones[6], calificaciones[7], calificaciones[8], calificaciones[9]});
+                }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }
